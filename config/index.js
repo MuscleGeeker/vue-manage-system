@@ -3,7 +3,7 @@ var path = require('path')
 
 module.exports = {
     build: {
-        env: require('./prod.env'),
+        env: require('./dev.env'),
         index: path.resolve(__dirname, '../dist/index.html'),
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
@@ -28,14 +28,11 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            '/api':{
-                target:'http://jsonplaceholder.typicode.com',
-                changeOrigin:true,
-                pathRewrite:{
-                    '/api':''
-                }
+            '/api': {
+                target: 'http://localhost:8090',
+                changeOrigin: true
             },
-            '/ms':{
+            '/ms': {
                 target: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
                 changeOrigin: true
             }

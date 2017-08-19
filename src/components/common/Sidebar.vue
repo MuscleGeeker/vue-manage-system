@@ -5,7 +5,8 @@
                 <template v-if="item.subs">
                     <el-submenu :index="item.index">
                         <template slot="title"><i :class="item.icon"></i>{{ item.title }}</template>
-                        <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title }}
+                        <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title
+                            }}
                         </el-menu-item>
                     </el-submenu>
                 </template>
@@ -27,16 +28,16 @@
                     {
                         icon: 'el-icon-setting',
                         index: 'readme',
-                        title: '自述'
+                        title: '简介'
                     },
                     {
                         icon: 'el-icon-menu',
                         index: '2',
-                        title: '表格',
+                        title: '用户',
                         subs: [
                             {
                                 index: 'basetable',
-                                title: '基础表格'
+                                title: '联盟用户'
                             },
                             {
                                 index: 'vuetable',
@@ -80,25 +81,26 @@
                 ]
             }
         },
-        computed:{
-            onRoutes(){
-                return this.$route.path.replace('/','');
+        computed: {
+            onRoutes() {
+                return this.$route.path.replace('/', '');
             }
         }
     }
 </script>
 
 <style scoped>
-    .sidebar{
+    .sidebar {
         display: block;
         position: absolute;
         width: 250px;
         left: 0;
         top: 70px;
-        bottom:0;
+        bottom: 0;
         background: #2E363F;
     }
+
     .sidebar > ul {
-        height:100%;
+        height: 100%;
     }
 </style>
